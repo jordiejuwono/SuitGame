@@ -32,11 +32,17 @@ class App {
         handTwo = playerTwo.inputPlayerHand()
     }
 
+    object Constant {
+        const val BATU = "batu"
+        const val GUNTING = "gunting"
+        const val KERTAS = "kertas"
+    }
+
     private fun setCondition() {
         //Menggunakan Looping While
         //Kondisi jika input pemain 1 dan pemain 2 salah
-        while ((handOne != "batu" && handOne != "gunting" && handOne != "kertas") &&
-            (handTwo != "batu" && handTwo != "gunting" && handTwo != "kertas")
+        while ((handOne != Constant.BATU && handOne != Constant.GUNTING && handOne != Constant.KERTAS) &&
+            (handTwo != Constant.BATU && handTwo != Constant.GUNTING && handTwo != Constant.KERTAS)
         ) {
             println("Input 'pemain 1' dan 'pemain 2' salah, silahkan coba masukkan lagi")
             inputFirstPlayer()
@@ -44,13 +50,13 @@ class App {
             setCondition()
         }
         //Kondisi jika hanya input pemain 1 yang salah
-        while (handOne != "batu" && handOne != "gunting" && handOne != "kertas") {
+        while (handOne != Constant.BATU && handOne != Constant.GUNTING && handOne != Constant.KERTAS) {
             println("Input 'pemain 1' salah, silahkan coba masukkan lagi")
             inputFirstPlayer()
             setCondition()
         }
         //Kondisi jika hanya input pemain 2 yang salah
-        while (handTwo != "batu" && handTwo != "gunting" && handTwo != "kertas") {
+        while (handTwo != Constant.BATU && handTwo != Constant.GUNTING && handTwo != Constant.KERTAS) {
             println("Input 'pemain 2' salah, silahkan coba masukkan lagi")
             inputSecondPlayer()
             setCondition()
